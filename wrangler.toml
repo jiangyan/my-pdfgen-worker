@@ -1,0 +1,15 @@
+name = "my-pdfgen"
+account_id = "29fdbc71776adf5f15255131049f944b"
+main = "src/index.ts"
+workers_dev = true
+compatibility_date = "2024-09-09"
+compatibility_flags = ["nodejs_compat_v2"]
+
+browser = { binding = "MYBROWSER" }
+
+[durable_objects]
+bindings = [{ name = "MY_DURABLE_OBJECT", class_name = "Browser" }]
+
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["Browser"]
